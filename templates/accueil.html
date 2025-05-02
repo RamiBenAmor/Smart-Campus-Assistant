@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login/Register Form</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/LoginRegister.css') }}">
+
+</head>
+<body>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul>
+      {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+    <div id="loader-wrapper">
+        <div class="loader"></div>
+      </div>
+  <div class="container" id="container">
+    <div class="form-container sign-up-container">
+      <form action="/register"  method="POST">
+        <h1>Create Account</h1>
+        <input type="text" placeholder="Username" name="username" required />
+<input type="email" placeholder="Email" name="email" required />
+<input type="password" placeholder="Password" name="password" required />
+<input type="phone" placeholder="phone" name="phone" required />
+
+        <button>Register</button>
+      </form>
+    </div>
+    <div class="form-container sign-in-container">
+      <form action="/login" method="POST">
+        <h1>Sign in</h1>
+        <input type="text" placeholder="email" name="email" required />
+        <input type="password" placeholder="Password" name="password" required />        
+        <button>Login</button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Welcome Back!</h1>
+          <p>Please login with your personal info</p>
+          <button class="ghost" id="signIn">Login</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Hello, Friend!</h1>
+          <p>Enter your details and start your journey with us</p>
+          <button class="ghost" id="signUp">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
