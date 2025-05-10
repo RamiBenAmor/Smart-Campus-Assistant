@@ -1,0 +1,126 @@
+vbody {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: #f7f8fa; /* Light background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.chat-container {
+    width: 100%;
+    height: 100%;
+    max-width: 900px; /* Limit width like ChatGPT */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#chatbox {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* Align messages to the bottom */
+    overflow-x: hidden;
+}
+
+.message {
+    padding: 15px 20px;
+    border-radius: 15px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    font-size: 16px;
+    max-width: 70%;
+    margin: 10px 0;
+    position: relative;
+}
+
+.user-message {
+    background: #dddedd; /* Light green for user */
+    color: #333;
+    align-self: flex-end; /* Align user messages to the right */
+    border-radius: 25px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bot-message {
+    background: #ffffff; /* White for bot */
+    color: #333;
+    align-self: flex-start; /* Align bot messages to the left */
+    border-radius: 25px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #e0e0e0;
+    padding: 16px 20px;
+    background: white;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 0 0 10px 10px;
+    max-width: 870px;
+}
+
+#user-input {
+    flex: 1;
+    padding: 12px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background: #a7aba7;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 12px;
+    font-size: 18px;
+    transition: background 0.3s;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px; 
+}
+
+button:hover {
+    background: #878a88;
+}
+
+button:focus {
+    outline: none;
+}
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+  button.active {
+    background-color: #4CAF50; /* Green color for active state */
+    color: white;
+}
+
+button.inactive {
+    background-color: #f1f1f1; /* Gray color for inactive state */
+    color: #888;
+}
